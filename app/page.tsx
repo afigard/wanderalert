@@ -4,6 +4,13 @@ import { useState } from "react";
 import advisoryData from "@/lib/advisoryData";
 import countryMeta from "@/lib/countryMeta";
 
+const levelMeta: Record<string, { emoji: string; note: string }> = {
+  "1": { emoji: "🟢", note: "Exercise Normal Precautions" },
+  "2": { emoji: "🟡", note: "Exercise Increased Caution" },
+  "3": { emoji: "🟠", note: "Reconsider Travel" },
+  "4": { emoji: "🔴", note: "Do Not Travel" },
+};
+
 export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [result, setResult] = useState<null | (typeof advisoryData)[0]>(null);
@@ -65,10 +72,11 @@ export default function Home() {
         <div className="mt-8 border p-4 rounded w-full max-w-md">
           <h2 className="text-xl font-semibold mb-2">Result</h2>
           <p>
-            <strong>Level:</strong> {result.level}
+            <strong>Level:</strong> {levelMeta[result.level]?.emoji}{" "}
+            {result.level} ({levelMeta[result.level]?.note})
           </p>
           <p>
-            <strong>Date updated:</strong> {result.date}
+            <strong>Date updated:</strong> 📅 {result.date}
           </p>
         </div>
       )}
