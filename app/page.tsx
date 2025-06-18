@@ -16,8 +16,8 @@ export default function Home() {
     setResult(
       entry || {
         country: selectedCountry,
-        alert: "Unknown",
-        level: "No data found.",
+        level: "Unknown",
+        date: "Unknown",
       }
     );
   };
@@ -63,12 +63,12 @@ export default function Home() {
 
       {result && (
         <div className="mt-8 border p-4 rounded w-full max-w-md">
-          <h2 className="text-xl font-semibold mb-2">Advisory</h2>
+          <h2 className="text-xl font-semibold mb-2">Result</h2>
           <p>
             <strong>Level:</strong> {result.level}
           </p>
           <p>
-            <strong>Alert:</strong> {result.alert}
+            <strong>Date updated:</strong> {result.date}
           </p>
         </div>
       )}
