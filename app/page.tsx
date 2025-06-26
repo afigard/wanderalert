@@ -57,13 +57,17 @@ export default function Home() {
 
   return (
     <main className="min-h-dvh flex flex-col justify-between px-4 py-6 sm:py-8">
-      <header className="flex justify-between items-center w-full max-w-7xl mx-auto px-2 py-4 sm:px-4 sm:py-6">
+      <header className="flex justify-between items-center w-full max-w-7xl mx-auto px-2 sm:px-4 sm:py-2">
         <FaExclamationTriangle className="text-2xl text-amber-500" />
         <button
           onClick={() => setDark(!dark)}
           className="text-foreground hover:opacity-80 transition cursor-pointer"
         >
-          {dark ? <FaSun size={20} /> : <FaMoon size={20} />}
+          {dark ? (
+            <FaSun size={32} className="h-5 w-5 sm:h-7 sm:w-7" />
+          ) : (
+            <FaMoon size={32} className="h-5 w-5 sm:h-7 sm:w-7" />
+          )}
         </button>
       </header>
 
