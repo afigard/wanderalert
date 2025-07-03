@@ -91,8 +91,8 @@ export default function Home() {
               onChange={(e) => setSelectedCountry(e.target.value)}
               className={`w-full p-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-amber-500 ${
                 dark
-                  ? "bg-[#1a1a1a] text-white border-[#444]"
-                  : "bg-white text-black border-gray-300"
+                  ? "bg-neutral-900 text-white border-neutral-700"
+                  : "bg-neutral-100 text-black border-neutral-300"
               }`}
             >
               <option value="">Select Country</option>
@@ -115,7 +115,13 @@ export default function Home() {
         </form>
 
         {result && (
-          <div className="mt-8 border p-4 rounded-xl w-full max-w-md">
+          <div
+            className={`mt-8 border p-4 rounded-xl w-full max-w-md shadow-md ${
+              dark
+                ? "bg-neutral-900 text-white border-neutral-600"
+                : "bg-neutral-100 text-black border-neutral-400"
+            }`}
+          >
             <h2 className="text-xl font-semibold mb-2">Result</h2>
             <p>
               <strong>Level:</strong> {levelMeta[result.level]?.emoji}{" "}
