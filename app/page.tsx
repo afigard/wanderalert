@@ -71,7 +71,7 @@ export default function Home() {
         </button>
       </header>
 
-      <div className="flex-grow flex flex-col items-center justify-center pt-6 pb-10">
+      <div className="flex-grow flex flex-col items-center justify-center pt-6 pb-10 px-2">
         <h1 className="text-3xl font-bold">WanderAlert</h1>
         <h2
           className={`text-xl font-medium mb-10 ${
@@ -89,7 +89,7 @@ export default function Home() {
             <select
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
-              className={`w-full p-2 rounded border focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+              className={`w-full p-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-amber-500 ${
                 dark
                   ? "bg-[#1a1a1a] text-white border-[#444]"
                   : "bg-white text-black border-gray-300"
@@ -108,14 +108,14 @@ export default function Home() {
           <button
             type="submit"
             disabled={!selectedCountry}
-            className="w-full bg-amber-500 text-white p-2 rounded hover:bg-amber-600 disabled:cursor-not-allowed disabled:opacity-50"
+            className="w-full bg-amber-500 text-white p-2 rounded-xl hover:bg-amber-600 disabled:cursor-not-allowed disabled:opacity-50"
           >
             Check Advisory
           </button>
         </form>
 
         {result && (
-          <div className="mt-8 border p-4 rounded w-full max-w-md">
+          <div className="mt-8 border p-4 rounded-xl w-full max-w-md">
             <h2 className="text-xl font-semibold mb-2">Result</h2>
             <p>
               <strong>Level:</strong> {levelMeta[result.level]?.emoji}{" "}
