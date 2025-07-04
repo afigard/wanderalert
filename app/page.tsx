@@ -75,7 +75,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold">WanderAlert</h1>
         <h2
           className={`text-xl font-medium mb-10 ${
-            dark ? "text-neutral-400" : "text-gray-500"
+            dark ? "text-neutral-400" : "text-neutral-600"
           }`}
         >
           Travel Advisories
