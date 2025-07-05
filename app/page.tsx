@@ -58,7 +58,9 @@ export default function Home() {
   return (
     <main className="min-h-dvh flex flex-col justify-between px-4 py-6 sm:py-8">
       <header className="flex justify-between items-center w-full max-w-7xl mx-auto px-2 sm:px-4 sm:py-2">
-        <FaExclamationTriangle className="text-2xl text-amber-500" />
+        <Link href="https://www.wandertools.online/">
+          <FaExclamationTriangle className="text-2xl text-amber-500" />
+        </Link>
         <button
           onClick={() => setDark(!dark)}
           className="text-foreground hover:opacity-80 transition cursor-pointer"
