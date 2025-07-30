@@ -59,7 +59,7 @@ export default function Home() {
     <main className="min-h-dvh flex flex-col justify-between px-4 py-6 sm:py-8">
       <header className="flex justify-between items-center w-full max-w-7xl mx-auto px-2 sm:px-4 sm:py-2">
         <Link href="https://www.wandertools.online/">
-          <FaTriangleExclamation className="text-2xl sm:text-3xl text-amber-500" />
+          <FaTriangleExclamation className="text-2xl sm:text-3xl text-orange-500" />
         </Link>
         <button
           onClick={() => setDark(!dark)}
@@ -91,7 +91,7 @@ export default function Home() {
             <select
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
-              className={`w-full p-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+              className={`w-full p-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-orange-500 ${
                 dark
                   ? "bg-neutral-900 text-white border-neutral-700"
                   : "bg-neutral-100 text-black border-neutral-300"
@@ -110,7 +110,7 @@ export default function Home() {
           <button
             type="submit"
             disabled={!selectedCountry}
-            className="w-full bg-amber-500 text-white p-2 rounded-xl hover:bg-amber-600 disabled:cursor-not-allowed disabled:opacity-50"
+            className="w-full bg-orange-500 text-white p-2 rounded-xl hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-50"
           >
             Check Advisory
           </button>
