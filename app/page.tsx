@@ -5,6 +5,7 @@ import advisoryData from "@/lib/advisoryData";
 import countryMeta from "@/lib/countryMeta";
 import { FaTriangleExclamation, FaSun, FaMoon } from "react-icons/fa6";
 import Link from "next/link";
+import FeedbackForm from "./components/FeedbackForm";
 
 const levelMeta: Record<string, { emoji: string; note: string }> = {
   "1": { emoji: "🟢", note: "Exercise Normal Precautions" },
@@ -91,7 +92,7 @@ export default function Home() {
             <select
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
-              className={`w-full p-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+              className={`w-full p-2 rounded-2xl border focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer ${
                 dark
                   ? "bg-neutral-900 text-white border-neutral-700"
                   : "bg-neutral-100 text-black border-neutral-300"
@@ -110,7 +111,7 @@ export default function Home() {
           <button
             type="submit"
             disabled={!selectedCountry}
-            className="w-full bg-orange-500 text-white p-2 rounded-xl hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-50"
+            className="w-full bg-orange-500 text-white p-2 rounded-2xl hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
           >
             Check Advisory
           </button>
@@ -138,13 +139,7 @@ export default function Home() {
 
       <footer className="flex justify-between items-center text-xs text-neutral-500 px-4 max-w-7xl mx-auto w-full mt-8 sm:mt-10">
         <span>© {new Date().getFullYear()} WanderAlert.</span>
-        <Link
-          href="https://instagram.com/ad.fgrd"
-          target="_blank"
-          className="underline hover:opacity-80"
-        >
-          Contact
-        </Link>
+        <FeedbackForm appName="WanderAlert" dark={dark} />
       </footer>
     </main>
   );
